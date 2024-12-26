@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef7e9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #c8e6c9;
+    padding: 20px; /* 패딩 통일 */
+    font-size: 20px; /* 첫 번째 기준으로 수정 */
+    font-weight: bold;
+    color: #2e7d32;
+    text-align: center;
+    position: relative;
+}
+
+header::before,
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #2e7d32;
+}
+
+header::before {
+    top: 0;
+}
+
+header::after {
+    bottom: 0;
+}
+
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+nav {
+    background-color: #e8f5e9;
+    width: 60px;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    border-right: 1px solid #b0c9b0;
+}
+
+nav:hover {
+    width: 220px;
+    
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+nav ul li {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color:#144916;
+    justify-content: center;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    width: 100%;
+    padding: 10px 20px;
+    color:#144916;
+}
+
+nav ul li a span.text {
+    margin-left: 10px;
+    color:#144916;
+    display: none;
+}
+
+nav:hover ul li a span.text {
+    display: inline;
+    color:#367d38;
+}
+
+nav ul li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 60%;
+    background-color: #b0c9b0;
+    bottom: -5px;
+    left: 20%;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eef7e9;
+    padding: 40px 0;
+    /* 여백 조정 */
+}
+
+.music-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    /* 아이템 간격 조정 */
+}
+
+.music-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    /* 내부 여백 조정 */
+    text-align: center;
+    width: 300px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.music-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.music-item h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #144916;
+}
+
+.music-item ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+}
+
+.music-item ul li {
+    margin-bottom: 14px;
+    /* li 간격 조정 */
+    font-weight: normal;
+    /* 가수 이름 폰트 조정 */
+}
+
+.music-item ul li a {
+    text-decoration: none;
+     color: #000000;
+    /* font-weight: bold; */
+    /* 곡 제목 폰트 조정 */
+}

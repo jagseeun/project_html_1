@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eef7e9;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background-color: #c8e6c9;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2e7d32;
+  text-align: center;
+  position: relative;
+}
+
+header::before,
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #2e7d32;
+}
+
+header::before {
+  top: 0;
+  /* 위쪽 선 */
+}
+
+header::after {
+  bottom: 0;
+  /* 아래쪽 선 */
+}
+
+.container {
+  display: flex;
+  flex: 1;
+}
+
+nav {
+  background-color: #e8f5e9;
+  width: 60px;
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  border-right: 1px solid #b0c9b0;
+}
+
+nav:hover {
+  width: 220px;
+}
+
+nav ul {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+nav ul li {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 선을 항목의 중간에 위치시킴 */
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #2e7d32;
+  font-size: 18px;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+nav ul li a span.text {
+  margin-left: 10px;
+  display: none;
+}
+
+nav:hover ul li a span.text {
+  display: inline;
+}
+
+nav ul li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 60%;
+  /* 선 길이 */
+  background-color: #b0c9b0;
+  bottom: -5px;
+  /* 각 항목 사이에 선 배치 */
+  left: 20%;
+  /* 중앙에 맞추기 */
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  /* 전체 화면의 정가운데 */
+  align-items: center;
+}
+
+.welcome-message {
+  text-align: left;
+  /* 텍스트 왼쪽 정렬 */
+  max-width: 500px;
+  /* 가독성을 위한 최대 너비 */
+}
+
+.welcome-message h1 {
+  font-size: 29px;
+  /* 안녕하세요 크기 */
+  margin-bottom: 10px;
+  color: #125816;
+
+}
+.welcome-message h2 {
+  font-size: 29px;
+  /* 안녕하세요 크기 */
+  margin-bottom: 10px;
+  color: #125816;
+
+}
+
+.welcome-message p {
+  font-size: 24px;
+  /* 제 홈페이지에 오신 걸 환영합니다 */
+  line-height: 1.8;
+  color: #125816;
+  white-space: nowrap;
+}
+
+.welcome-message p.signature {
+  font-size: 16px;
+  /* - 1414 장세은 크기 */
+  margin-top: 15px;
+  color: #125816;
+}

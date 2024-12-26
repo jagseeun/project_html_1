@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eef7e9; /* 연한 초록색 배경 */
+    height: 100vh; /* 화면 전체 높이 */
+}
+
+header {
+    background-color: #c8e6c9;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2e7d32;
+    text-align: center;
+    position: relative;
+}
+
+header::before,
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #2e7d32;
+}
+
+header::before {
+    top: 0;
+}
+
+header::after {
+    bottom: 0;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 80px); /* header 제외한 높이 */
+}
+
+nav {
+    background-color: #e8f5e9;
+    width: 60px;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    border-right: 1px solid #b0c9b0;
+}
+
+nav:hover {
+    width: 220px;
+    color:#175b4a;
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+nav ul li {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #2e7d32;
+    font-size: 18px;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+nav ul li a span.text {
+    margin-left: 10px;
+    display: none;
+}
+
+nav:hover ul li a span.text {
+    display: inline;
+}
+
+nav ul li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 60%;
+    background-color: #b0c9b0;
+    bottom: -5px;
+    left: 20%;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: #eef7e9;
+    overflow-y: auto;
+}
+
+.likes-container {
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    gap: 40px; /* 박스 간 간격 */
+    padding: 20px;
+    margin: auto; /* 중앙 정렬 */
+    text-decoration: none; /* 밑줄 제거 */
+    max-width: 1200px;
+}
+.like-item a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit;
+    display: block; /* 블록 요소로 변경 */
+}
+
+.like-item h3 {
+    color: #2e7d32;
+    font-size: 1.2em;
+    margin-top: 10px;
+    text-decoration: none; /* 밑줄 제거 */
+}
+.like-item a {
+    text-decoration: none !important; /* 중요도를 높여 다른 스타일 덮어쓰기 */
+    color: inherit;
+    display: block; /* 블록 요소로 설정 */
+}
+
+.like-item a:hover, 
+.like-item a:focus, 
+.like-item a:visited {
+    text-decoration: none !important; /* 모든 상태에서 밑줄 제거 */
+}
+
+.like-item h3 {
+    color: #2e7d32;
+    font-size: 1.2em;
+    margin-top: 10px;
+    text-decoration: none !important; /* h3에도 중요도 높이기 */
+}
+.like-item a, .like-item a h3 {
+    text-decoration: none !important; /* 링크와 제목 모두 밑줄 제거 */
+}
+
+.like-item a h3:hover {
+    text-decoration: none !important; /* 제목에 마우스를 올려도 밑줄 제거 */
+}
+
+
+.like-item {
+    text-align: center;
+    width: 300px; /* 고정된 박스 너비 */
+    height: 350px; /* 고정된 박스 높이 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white; /* 배경색 */
+    border-radius: 10px; /* 둥근 모서리 */
+    transition: transform 0.3s, box-shadow 0.3s; /* 부드러운 전환 효과 */
+    cursor: pointer; /* 클릭 가능 표시 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 기본 쉐도우 */
+}
+
+.like-item:hover {
+    transform: translateY(-5px); /* hover 시 위로 이동 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* hover 시 강조된 쉐도우 */
+}
+
+.like-item img {
+    width: 150px; /* 이미지 너비 */
+    height: 150px; /* 이미지 높이 */
+    object-fit: cover; /* 이미지 비율 유지 */
+    border-radius: 10px; /* 이미지 둥근 모서리 */
+    margin-bottom: 10px; /* 이미지와 텍스트 간격 */
+}
+
+.like-item h3 {
+    color: #2e7d32;
+    font-size: 1.2em;
+    margin-top: 10px;
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+.like-item a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit;
+}
+/* 링크의 기본 밑줄 제거 */
+.like-item {
+    text-decoration: none; /* 링크 전체의 밑줄 제거 */
+}
+
+.like-item img,
+.like-item h3 {
+    text-decoration: none; /* 이미지와 제목에 밑줄 제거 */
+}
+
+.like-item h3:hover {
+    text-decoration: none; /* 제목에 마우스를 올려도 밑줄 제거 */
+}
+
+/* 추가: 글자 색상이나 강조 스타일 변경 (선택 사항) */
+.like-item h3 {
+    color: black; /* 제목 글씨 색상 설정 */
+    font-weight: normal; /* 기본 글씨 두께 */
+}
+
+.like-item:hover h3 {
+    color: #175b4a; /* 마우스 올릴 때 색상 변경 */
+}
+
